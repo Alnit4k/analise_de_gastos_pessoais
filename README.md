@@ -30,7 +30,50 @@ Script de consultas em T-SQL (SQL Server) organizado em três blocos progressivo
 Notebook Python com análise exploratória usando **pandas**: carregamento do CSV, conversão da coluna de data para `datetime`, checagem de tipos e valores nulos, e criação de colunas derivadas (ano-mês, mês numérico e nome do mês) para apoiar as agregações temporais.
 
 ### 📄 `dashboard.pbix`
-Dashboard em Power BI construído a partir dos dados tratados, com páginas de análise temporal e de tendências de gastos, permitindo a visualização interativa dos totais e padrões de consumo identificados nas etapas de SQL e Python.
+Dashboard em Power BI construído a partir dos dados tratados, com 4 páginas de análise, permitindo a visualização interativa dos totais e padrões de consumo identificados nas etapas de SQL e Python.
+
+## Sobre o Dashboard
+
+O dashboard é dividido em 4 páginas complementares:
+
+### 1️⃣ Visão Geral
+Página inicial com filtros de data e os indicadores-chave do período:
+- **Gasto total**: $71,67K
+- **Ticket médio**: $15,59
+- **Total de transações**: 5K
+- **Top categoria**: Coffe (categoria mais frequente)
+
+Traz também um gráfico de linha **"Gasto ao decorrer do tempo"**, mostrando a evolução mensal dos gastos entre jul/2022 e mar/2025 — com picos recorrentes de gastos em determinados meses (destaque para 2023-07 e 2024-07) — e um ranking **"Top 10 Transações"** por categoria, liderado por Coffe, Market, Restuarant e Transport.
+
+### 2️⃣ Comportamento de Consumo
+Página de análise por categoria, respondendo "para onde vai o dinheiro":
+- **Participação de gastos por categoria** (funil): Restaurant concentra a maior fatia do orçamento, seguido por Travel (29,78%) e Tech (23,8%).
+- **Categorias mais frequentes** (volume de transações): Coffe (1.248) e Market (1.142) lideram em frequência, mas não em valor — indicando gastos pequenos e recorrentes.
+- **Ticket médio por categoria**: Motel ($675,00) e Travel ($469,56) têm os maiores tickets médios, mesmo sendo pouco frequentes.
+- **Distribuição dos gastos** (dispersão): visualiza a relação entre valor médio e volume por categoria.
+- **Cards de destaque**: Categoria mais frequente (Coffe, 4.597 transações), Maior ticket médio (Motel, $675,00) e Categoria de maior gasto (Restaurant, $12.615,54 — 17,60% do total).
+
+**Principais insights já extraídos no próprio dashboard:**
+- Restaurant concentra a maior parcela do orçamento.
+- Coffee é o hábito de consumo mais recorrente.
+- Motel possui o maior gasto médio por transação.
+- Poucas categorias representam a maior parte das despesas (efeito 80/20).
+
+### 3️⃣ Análise Temporal
+Página dedicada a padrões de tempo:
+- **Cards**: Mês de maior gasto (2024-07), Ano de maior gasto (2025), Maior valor gasto no mês ($5.509,49) e Dia mais caro da semana (Wednesday).
+- **Sum of Month by Month Name**: tendência de crescimento acumulado dos gastos ao longo dos meses do ano.
+- **Sum of amount by Time**: distribuição dos gastos por hora do dia, com pico entre as horas 10–20 (período de maior movimentação financeira).
+- **Sum of amount by Day Name**: quarta-feira é disparadamente o dia da semana com maior soma de gastos, seguida por terça e sexta, com os finais de semana entre os mais baixos.
+
+### 4️⃣ Detalhamento
+Página de suporte com uma tabela detalhada das transações (`tableEx`) e um gráfico combinado de linha/coluna, permitindo explorar os dados brutos por trás dos indicadores das páginas anteriores.
+
+## Principais achados
+- O maior volume de transações vem de gastos pequenos e recorrentes (Coffe, Market), enquanto o maior impacto financeiro vem de categorias menos frequentes, porém de ticket alto (Restaurant, Motel, Travel).
+- Há sazonalidade nos gastos, com picos concentrados em julho (2023 e 2024) e tendência de crescimento ao longo do ano.
+- Quarta-feira é o dia da semana com maior gasto acumulado.
+- Restaurant é a categoria de maior impacto financeiro, respondendo por ~17,6% do total gasto.
 
 ## Tecnologias utilizadas
 - **SQL Server / T-SQL** — armazenamento e consultas analíticas
