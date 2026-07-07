@@ -86,3 +86,14 @@ Página de suporte com uma tabela detalhada das transações (`tableEx`) e um gr
 3. Exploração e agregações via SQL (por categoria, por período de tempo).
 4. Análise exploratória complementar em Python com pandas.
 5. Construção do dashboard final no Power BI.
+
+## Dashboard
+
+#### Visao geral
+<img width="1317" height="736" alt="Captura de tela 2026-07-06 220003" src="https://github.com/user-attachments/assets/13e4c44b-f980-43cd-ab56-eef0276e8d56" />
+
+#### Comportamento do consumo
+<img width="1328" height="748" alt="Captura de tela 2026-07-06 220015" src="https://github.com/user-attachments/assets/d1b799d7-dda7-4156-92df-43f6a9ee2f99" />
+
+#### Analise ao decorer do tempo
+<img width="1317" height="732" alt="Captura de tela 2026-07-06 220026" src="https://github.com/user-attachments/assets/5eaa186b-a3b7-42ca-93d7-331cb37b71c0" />
